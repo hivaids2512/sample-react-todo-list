@@ -7,3 +7,5 @@ While there are hundreds of similar projects out there, this project may be help
 * Just begin with React
 * Want to learn React best practices
 * Want to learn coding standars and design pattern
+
+Reference: https://github.com/alicoding/react-webpack-babel
