@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TodoList from './components/TodoList';
-import TodoDetail from './components/TotoDetail';
+import TodoListContainer from './components/TodoList/to-do-list.container';
+import TodoDetailContainer from './components/TotoDetail/to-do-detail.container';
 
 export default class Todo extends Component {
 
@@ -11,8 +11,8 @@ export default class Todo extends Component {
     render() {
         return (
             <div className="row">
-                <TodoList />
-                <TodoDetail />
+                <TodoListContainer />
+                <TodoDetailContainer />
             </div>
         );
     }
