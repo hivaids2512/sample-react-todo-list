@@ -1,49 +1,49 @@
 import React, { Component } from 'react';
 import TodoListPresentation from './to-do-list.presentation';
+import Emitter from 'helpers/emitter';
 
-let todoList = [
-    {   
-        id: 1,
-        name: "quy",
-        content: "node 1"
-    },
-    {
-        id: 2,
-        name: "quy",
-        content: "node 1"
-    },
-    {
-        id: 3,
-        name: "quy",
-        content: "node 1"
-    },
-    {
-        id: 4,
-        name: "quy",
-        content: "node 1"
-    },
-    {
-        id: 5,
-        name: "quy",
-        content: "node 1"
-    }
-];
+let a = [];
+let todoList = [];
+
+let subscription = null;
 
 export default class TodoListContainer extends Component {
 
     constructor() {
         super();
+        this.state = { todoList: [] };
+        localStorage.setItem('todoList', JSON.stringify([]));
+    }
+
+    componentWillMount() {
+        subscription = Emitter.addListener('updateList', (data) => {
+            this.loadTodoList();
+        });
+    }
+
+    componentDidMount() {
         this.loadTodoList();
     }
 
+    componentWillUnmount() {
+        subscription.remove()
+    }
+
     loadTodoList = () => {
-        localStorage.setItem('todoList', JSON.stringify(todoList));
-        todoList = JSON.parse(localStorage.getItem('todoList'));
+        let context = this;
+        setTimeout(function () {
+            if (localStorage.getItem('todoList')) {
+                todoList = JSON.parse(localStorage.getItem('todoList'));
+            } else {
+                todoList = [];
+            }
+            context.setState({ todoList: todoList });
+        }, 1000);
     }
 
     render() {
         return (
-            <TodoListPresentation todoList={todoList} />
+            <TodoListPresentation todoList={this.state.todoList} />
         );
     }
 

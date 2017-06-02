@@ -6,11 +6,11 @@ export default class TodoListPresentation extends Component {
 
     constructor() {
         super();
+        this.switchTodo = this.switchTodo.bind(this);
     }
 
-    switchTodo = (todo) => {
+    switchTodo(todo) {
         Emitter.emit('todoChanged', todo);
-        // console.log(this.props.todoList[1]);
     }
 
     render() {
@@ -19,9 +19,11 @@ export default class TodoListPresentation extends Component {
             <div className="col-md-3">
                 <p className="lead">Your Todos <span className="pull-right"> <AddTodoContainer /></span></p>
                 <div className="list-group">
-                    {this.props.todoList.map(function (todo, i) {
-                        return <a href="#" key={i} onClick={context.switchTodo.bind(context, { todo })} className="list-group-item"> {i} {todo.name} </a>;
-                    })}
+                    {
+                        this.props.todoList.map(function (todo, i) {
+                            return <a href="#" key={i} onClick={() => context.switchTodo({todo})} className="list-group-item"> {i} {todo.name} </a>;
+                        })
+                    }
                 </div>
             </div>
         );

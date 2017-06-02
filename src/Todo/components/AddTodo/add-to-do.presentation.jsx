@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import Emitter from 'helpers/emitter';
 
 const customStyles = {
     overlay: {
@@ -35,7 +36,6 @@ export default class AddTodoPresentation extends Component {
             modalIsOpen: false
         };
         this.openModal = this.openModal.bind(this);
-        this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -44,13 +44,14 @@ export default class AddTodoPresentation extends Component {
         this.setState({ modalIsOpen: true });
     }
 
-    afterOpenModal() {
-
-    }
-
     onSubmit(event) {
         event.preventDefault();
-        console.log(this.state)
+        const formData = {};
+        for (const field in this.refs) {
+            formData[field] = this.refs[field].value;
+        }
+        Emitter.emit('todoAdded', formData);
+        this.closeModal();
     }
 
     closeModal() {
@@ -70,12 +71,12 @@ export default class AddTodoPresentation extends Component {
                     <h3>New Todo</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label htmlFor="todoName">Name</label>
-                            <input type="text" name="todoName" className="form-control" id="todoName" />
+                            <label htmlFor="name">Name</label>
+                            <input type="text" ref="name" name="name" className="form-control" id="name" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="todoContent">Content:</label>
-                            <textarea name="todoContent" value={ this.state.email } className="form-control" rows="5" id="todoContent"></textarea>
+                            <label htmlFor="content">Content:</label>
+                            <textarea name="content" ref="content" value={this.state.email} className="form-control" rows="5" id="content"></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
