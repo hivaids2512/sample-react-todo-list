@@ -3,7 +3,7 @@ import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Todo from './Todo';
+import Todo from './components/Todo';
 
 export default class App extends React.Component {
   render() {

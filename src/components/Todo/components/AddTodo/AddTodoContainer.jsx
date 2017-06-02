@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddTodoPresentation from './add-to-do.presentation';
+import AddTodoView from './AddTodoView';
 import Emitter from 'helpers/emitter';
 
 let subscription = null;
@@ -25,7 +25,7 @@ export default class AddTodoContainer extends Component {
 
     render () {
         return (
-            <AddTodoPresentation />
+            <AddTodoView />
         );
     }
 

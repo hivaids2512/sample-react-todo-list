@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Emitter from 'helpers/emitter';
-import TodoDetailPresentation from './to-do-detail.presentation';
+import TodoDetailView from './TodoDetailView';
 
 // remove this subscription afterwards when there is no use for it
 let subscription = null;
@@ -26,7 +26,7 @@ export default class TodoDetailContainer extends Component {
 
     render() {
         return (
-            <TodoDetailPresentation todo={ this.state } />
+            <TodoDetailView todo={ this.state } />
         );
     }
 

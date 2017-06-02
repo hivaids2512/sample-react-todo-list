@@ -1,34 +1,10 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Emitter from 'helpers/emitter';
+import { CustomStyles } from './const.jsx'
 
-const customStyles = {
-    overlay: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(255, 255, 255, 0.75)'
-    },
-    content: {
-        position: 'absolute',
-        top: '60px',
-        left: '400px',
-        right: '400px',
-        bottom: '160px',
-        border: '1px solid #ccc',
-        background: '#fff',
-        overflow: 'auto',
-        WebkitOverflowScrolling: 'touch',
-        borderRadius: '4px',
-        outline: 'none',
-        padding: '20px'
 
-    }
-}
-
-export default class AddTodoPresentation extends Component {
+export default class AddTodoView extends Component {
 
     constructor() {
         super();
@@ -67,7 +43,7 @@ export default class AddTodoPresentation extends Component {
                     contentLabel="Modal"
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
-                    style={customStyles} >
+                    style={CustomStyles} >
                     <h3>New Todo</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">

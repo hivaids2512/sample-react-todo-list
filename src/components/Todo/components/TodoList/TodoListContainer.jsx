@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoListPresentation from './to-do-list.presentation';
+import TodoListView from './TodoListView';
 import Emitter from 'helpers/emitter';
 
 let a = [];
@@ -43,7 +43,7 @@ export default class TodoListContainer extends Component {
 
     render() {
         return (
-            <TodoListPresentation todoList={this.state.todoList} />
+            <TodoListView todoList={this.state.todoList} />
         );
     }
 
