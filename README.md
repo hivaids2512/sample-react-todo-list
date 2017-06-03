@@ -8,4 +8,12 @@ While there are hundreds of similar projects out there, this project may be help
 * Want to learn React best practices
 * Want to learn coding standars and design pattern
 
+## Project structure
+
+## Coding standars
+
+## Paterns
+
+## Components Comunication
+
 Reference: https://github.com/alicoding/react-webpack-babel
