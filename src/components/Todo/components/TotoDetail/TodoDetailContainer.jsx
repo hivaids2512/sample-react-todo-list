@@ -4,13 +4,18 @@ import TodoDetailView from './TodoDetailView';
 
 // remove this subscription afterwards when there is no use for it
 let subscription = null;
-let currentTodo = {};
+let currentTodo = {
+    name: "no selected",
+    content: "no selected",
+    date: "no selected",
+    comments: []
+};
 
 export default class TodoDetailContainer extends Component {
 
     constructor() {
         super();
-        this.state = { };
+        this.state = currentTodo;
     }
 
     componentWillMount() {

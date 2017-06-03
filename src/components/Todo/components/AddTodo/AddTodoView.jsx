@@ -26,6 +26,8 @@ export default class AddTodoView extends Component {
         for (const field in this.refs) {
             formData[field] = this.refs[field].value;
         }
+        formData.date = new Date();
+        formData.comments = [1,2,3,4,5,6,7,8,9];
         Emitter.emit('todoAdded', formData);
         this.closeModal();
     }
