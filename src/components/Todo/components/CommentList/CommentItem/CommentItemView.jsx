@@ -14,10 +14,10 @@ export default class CommentItemView extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-12">
-                        <span className="glyphicon glyphicon-star"></span>
-                        Anonymous
+                        <span className="glyphicon glyphicon-comment"></span>
+                         You:
                             <span className="pull-right">10 days ago</span>
-                        <p>This product was great in terms of quality. I would definitely buy another!</p>
+                        <p>{ this.props.comment.content }</p>
                     </div>
                 </div>
                 <hr></hr>

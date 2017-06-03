@@ -10,7 +10,7 @@ export default class CommentItemContainer extends Component {
 
     render(){
         return (
-            <CommentItemView />
+            <CommentItemView comment={ this.props.comment } />
         );
     }
 

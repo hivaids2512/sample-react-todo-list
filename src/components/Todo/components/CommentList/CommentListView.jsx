@@ -20,7 +20,7 @@ export default class CommentListView extends Component {
                 <hr></hr>
                 {
                     this.props.commentList.map(function(comment, index){
-                        return  <CommentItemContainer key={index} />
+                        return  <CommentItemContainer key={index} comment={comment}/>
                     })
                 }
             </div>

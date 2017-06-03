@@ -8,7 +8,8 @@ let currentTodo = {
     name: "no selected",
     content: "no selected",
     date: "no selected",
-    comments: []
+    comments: [
+    ]
 };
 
 export default class TodoDetailContainer extends Component {
