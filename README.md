@@ -10,6 +10,7 @@ While there are hundreds of similar projects out there, this project may be help
 
 ### Project structure
 
+```
 /src
   /components 
     /Button 
@@ -55,6 +56,7 @@ While there are hundreds of similar projects out there, this project may be help
       /reducer.js
   index.js 
   store.js
+```
 
 ### Coding standars
 
