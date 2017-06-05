@@ -8,6 +8,10 @@ While there are hundreds of similar projects out there, this project may be help
 * Want to learn React best practices
 * Want to learn coding standars and design pattern
 
+### Run this project
+
+* Please refer to this: https://github.com/alicoding/react-webpack-babel
+
 ### Project structure
 
 The good thing of React is that you can define your app's structure in any way you like. However, a clear and well defined structure will make your app easy to read, understand, co-operate with team members and also easy to maintenant when the project grows up with hundred or thousand of components.
@@ -55,9 +59,9 @@ Has 2 sub components: Container and View. Container will be used
 
 This project follows the Container - Presentation design pattern which components will be devided into 2 categories: Container - Presentation. 
 
-Container will works as a Controller in MVC model. It contains application logic that provide the data and behavior to presentational or other container components.
+* Container will works as a Controller in MVC model. It contains application logic that provide the data and behavior to presentational or other container components.
 
-Presentation will work as a View in MVC model. It contains application view that receive data from controller and display to user. 
+* Presentation will work as a View in MVC model. It contains application view that receive data from controller and display to user. 
 
 * Refer to this [blog post](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) for more detail about this pattern.
 
@@ -66,5 +70,3 @@ Presentation will work as a View in MVC model. It contains application view that
 There are many ways to make components talk with each other. The most common way is using Flux or Redux as a state manager. However, Flux or Redux are quite complicated and take time to begin with. So, many [no flux tricks](http://andrewhfarmer.com/component-communication/) are available and you can follow up with one of them.
 
 In this project, I use [facebook emmiter](https://github.com/facebook/emitter) for a simple event emitter - listener. Of course, this approach is not a good one when your application grows up since you must handle event emitter and event listener for every component. However, it's simple enough for you to start with and you can replace it by any aproaches available.  
-
-Reference: https://github.com/alicoding/react-webpack-babel
