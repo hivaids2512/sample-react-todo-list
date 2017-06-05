@@ -10,53 +10,38 @@ While there are hundreds of similar projects out there, this project may be help
 
 ### Project structure
 
+The good thing of React is that you can define your app's structure in any way you like. However, a clear and well defined structure will make your app easy to read, understand, co-operate with team members and also easy to maintenant when the project grows up with hundred or thousand of components.
+
+I have defined the project structure as follow:
+
 ```
 /src
-  /components 
-    /Button 
-    /Notifications
-      /components
-        /ButtonDismiss  
-          /images
-          /locales
-          /specs 
-          /index.js
-          /styles.scss
-      /index.js
-      /styles.scss
-  /data
-    /users
-      /actions.js
-      /api.js
-      /reducer.js
-  /scenes
-    /Home 
-      /components 
-        /ButtonLike
-      /services
-        /processData
-      /index.js
-      /styles.scss
-    /Sign 
-      /components 
-        /FormField
-      /scenes
-        /Login
-        /Register 
-          /locales
-          /specs
-          /index.js
-          /styles.scss
+  /helpers
   /services
-    /api
-    /geolocation
-    /session
-      /actions.js
-      /index.js
-      /reducer.js
-  index.js 
-  store.js
+  /components 
+    /Footer 
+      /index.jsx
+      /style.css
+    /Todo
+      /components
+        /AddTodo 
+        /TodoList
+        /TodoDetail
+          /components
+            /CommentList
+              /components
+                /AddComment
+                /CommentItem
+      /index.jsx
+    /Navbar
+      /index.jsx
+      /style.css
+  /app.jsx
+  /index.jsx
+  /tempalte.jsx
 ```
+
+In this structure, each component will work independently and each of them will have it's own child components located in /components directory. In many cases, some components are just used in only one place and not reused in any where, so adding all of them in root component will make you confuse with hundred of orther components when your project becomes larger. Categorize them as a sub-component will get much easier to find and maintain them.
 
 ### Coding standars
 
