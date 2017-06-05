@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Emitter from 'helpers/emitter';
 import { CustomStyles } from './Const.jsx'
-
+import randomstring from 'randomstring';
 
 export default class AddTodoView extends Component {
 
@@ -28,6 +28,7 @@ export default class AddTodoView extends Component {
         }
         formData.date = new Date();
         formData.comments = [];
+        formData.id = randomstring.generate(7);
         Emitter.emit('todoAdded', formData);
         this.closeModal();
     }

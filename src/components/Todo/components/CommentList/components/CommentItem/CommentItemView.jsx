@@ -14,9 +14,8 @@ export default class CommentItemView extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-12">
-                        <span className="glyphicon glyphicon-comment"></span>
-                         You:
-                            <span className="pull-right">10 days ago</span>
+                        <span className="glyphicon glyphicon-comment"></span> You
+                            <span className="pull-right">{ this.props.comment.date }</span>
                         <p>{ this.props.comment.content }</p>
                     </div>
                 </div>

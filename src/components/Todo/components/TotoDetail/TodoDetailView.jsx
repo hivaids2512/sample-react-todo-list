@@ -22,7 +22,7 @@ export default class TodoDetailPresentation extends Component {
                         <p>{this.props.todo.content}</p>
                     </div>
                 </div>
-                <CommentListContainer commentList={ this.props.todo.comments } />
+                <CommentListContainer todo = { this.props.todo } commentList={ this.props.todo.comments } />
             </div>
         );
     }
