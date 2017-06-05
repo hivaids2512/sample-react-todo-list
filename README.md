@@ -10,6 +10,52 @@ While there are hundreds of similar projects out there, this project may be help
 
 ### Project structure
 
+/src
+  /components 
+    /Button 
+    /Notifications
+      /components
+        /ButtonDismiss  
+          /images
+          /locales
+          /specs 
+          /index.js
+          /styles.scss
+      /index.js
+      /styles.scss
+  /data
+    /users
+      /actions.js
+      /api.js
+      /reducer.js
+  /scenes
+    /Home 
+      /components 
+        /ButtonLike
+      /services
+        /processData
+      /index.js
+      /styles.scss
+    /Sign 
+      /components 
+        /FormField
+      /scenes
+        /Login
+        /Register 
+          /locales
+          /specs
+          /index.js
+          /styles.scss
+  /services
+    /api
+    /geolocation
+    /session
+      /actions.js
+      /index.js
+      /reducer.js
+  index.js 
+  store.js
+
 ### Coding standars
 
 ### Paterns
