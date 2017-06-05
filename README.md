@@ -41,12 +41,30 @@ I have defined the project structure as follow:
   /tempalte.jsx
 ```
 
-In this structure, each component will work independently and each of them will have it's own child components located in /components directory. In many cases, some components are just used in only one place and not reused in any where, so adding all of them in root component will make you confuse with hundred of orther components when your project becomes larger. Categorize them as a sub-component will get much easier to find and maintain them.
+In this structure, components will work independently and each of them will have it's own child components located in /components directory. In many cases, some components are just used in only one place and not reused in any where, so adding all of them in root component will make you confuse with hundred of orther components when your project becomes larger. Categorize them as a sub-component will get much easier to find and maintain them.
+
+Every component follow this structure must:
+Has it's own stylesheet, place in styles.css
+Has 2 sub components: Container and View. Container will be used 
 
 ### Coding standars
 
+* [Aribnb coding standard](https://github.com/airbnb/javascript/tree/master/react) is good resource to follow. 
+
 ### Paterns
 
+This project follows the Container - Presentation design pattern which components will be devided into 2 categories: Container - Presentation. 
+
+Container will works as a Controller in MVC model. It contains application logic that provide the data and behavior to presentational or other container components.
+
+Presentation will work as a View in MVC model. It contains application view that receive data from controller and display to user. 
+
+* Refer to this [blog post](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) for more detail about this pattern.
+
 ### Components Comunication
+
+There are many ways to make components talk with each other. The most common way is using Flux or Redux as a state manager. However, Flux or Redux are quite complicated and take time to begin with. So, many [no flux tricks](http://andrewhfarmer.com/component-communication/) are available and you can follow up with one of them.
+
+In this project, I use [facebook emmiter](https://github.com/facebook/emitter) for a simple event emitter - listener. Of course, this approach is not a good one when your application grows up since you must handle event emitter and event listener for every component. However, it's simple enough for you to start with and you can replace it by any aproaches available.  
 
 Reference: https://github.com/alicoding/react-webpack-babel
