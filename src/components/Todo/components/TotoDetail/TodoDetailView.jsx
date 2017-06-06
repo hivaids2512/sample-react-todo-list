@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Emitter from 'helpers/emitter';
-import CommentListContainer from 'components/Todo/components/CommentList/CommentListContainer.jsx';
+import CommentListContainer from './components/CommentList/CommentListContainer.jsx';
 
 // remove this subscription afterwards when there is no use for it
 let subscription = null;
