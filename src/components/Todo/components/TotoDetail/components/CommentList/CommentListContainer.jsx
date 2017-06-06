@@ -21,7 +21,6 @@ export default class CommentListContainer extends Component {
     }
 
     loadComment() {
-
         let context = this;
         let todoList = JSON.parse(localStorage.getItem('todoList'));
         todoList.forEach(function (todo) {
