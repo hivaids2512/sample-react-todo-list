@@ -12,20 +12,9 @@ export default class AddTodoContainer extends Component {
         this.addTodo = this.addTodo.bind(this);
     }
 
-    componentWillMount() {
-        subscription = Emitter.addListener('todoAdded', (data) => {
-            TodoService.addTodo(data);
-            Emitter.emit('updateList', 'data');
-        });
-    }
-
     addTodo(newTodo) {
-        TodoService.addTodo(data);
+        TodoService.addTodo(newTodo);
         Emitter.emit('updateList', 'data');
-    }
-
-    componentWillUnmount() {
-        subscription.remove()
     }
 
     render() {
