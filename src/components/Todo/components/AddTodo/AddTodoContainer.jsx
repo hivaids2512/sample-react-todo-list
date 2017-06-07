@@ -7,8 +7,9 @@ let subscription = null;
 
 export default class AddTodoContainer extends Component {
 
-    constructor () {
+    constructor() {
         super();
+        this.addTodo = this.addTodo.bind(this);
     }
 
     componentWillMount() {
@@ -18,13 +19,18 @@ export default class AddTodoContainer extends Component {
         });
     }
 
+    addTodo(newTodo) {
+        TodoService.addTodo(data);
+        Emitter.emit('updateList', 'data');
+    }
+
     componentWillUnmount() {
         subscription.remove()
     }
 
-    render () {
+    render() {
         return (
-            <AddTodoView />
+            <AddTodoView addTodo = {this.addTodo} />
         );
     }
 

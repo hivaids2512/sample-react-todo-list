@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Emitter from 'helpers/emitter';
+import FormHelper from 'helper/FormHelper';
 
 export default class AddCommentView extends Component {
 
@@ -11,11 +12,9 @@ export default class AddCommentView extends Component {
     onSubmit(event) {
         event.preventDefault();
         const formData = {};
-        for (const field in this.refs) {
-            formData[field] = this.refs[field].value;
-        }
+        formData = FormHelper.getFormData(this.refs);
         formData.date = new Date();
-        Emitter.emit('commentAdded', formData);
+        this.props.addComment(this.props.todo, formData);
     }
 
     render() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Emitter from 'helpers/emitter';
+import FormHelper from 'helper/FormHelper';
 import { CustomStyles } from './Const.jsx'
 import randomstring from 'randomstring';
 
@@ -23,14 +24,12 @@ export default class AddTodoView extends Component {
     onSubmit(event) {
         event.preventDefault();
         const formData = {};
-        for (const field in this.refs) {
-            formData[field] = this.refs[field].value;
-        }
+        formData = FormHelper.getFormData(this.refs);
         formData.date = new Date();
         formData.comments = [];
         formData.id = randomstring.generate(7);
         formData.status = false;
-        Emitter.emit('todoAdded', formData);
+        this.props.addTodo(formData);
         this.closeModal();
     }
 

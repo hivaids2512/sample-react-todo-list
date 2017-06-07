@@ -10,23 +10,17 @@ export default class AddCommentContainer extends Component {
 
     constructor() {
         super();
+        this.addComment = this.addComment.bind(this);
     }
 
-    componentWillMount() {
-        let context = this;   
-        subscription = Emitter.addListener('commentAdded', (data) => {
-            CommentService.addComment(context.props.todo, data);
-            Emitter.emit('updateCommentList', 'data');
-        });
+    addComment(todo, comment) {
+        CommentService.addComment(todo, comment);
+        Emitter.emit('updateCommentList', 'data');
     }
-
-    componentWillUnmount() {
-        subscription.remove()
-    }
-
+    
     render() {
         return (
-            <AddCommentView todo={this.props.todo} />
+            <AddCommentView addComment={this.addComment} todo={this.props.todo} />
         );
     }
 
