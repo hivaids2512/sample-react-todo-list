@@ -7,9 +7,11 @@ class FormHelper extends Component {
     }
 
     getFormData(refs) {
+        let formData = {};
         for (const field in refs) {
             formData[field] = refs[field].value;
         }
+        return formData;
     }
 
 }
