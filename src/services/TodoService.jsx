@@ -8,7 +8,10 @@ class TodoService extends Component {
     }
 
     getTodoList() {
-        return JSON.parse(localStorage.getItem('todoList'));
+        if (localStorage.getItem('todoList')) {
+            return JSON.parse(localStorage.getItem('todoList'));
+        }
+        return [];
     }
 
     addTodo(newTodo) {
