@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoListView from './TodoListView';
 import Emitter from 'helpers/emitter';
+import TodoService from 'services/TodoService';
 
 let a = [];
 let todoList = [];
@@ -33,7 +34,7 @@ export default class TodoListContainer extends Component {
         let context = this;
         setTimeout(function () {
             if (localStorage.getItem('todoList')) {
-                todoList = JSON.parse(localStorage.getItem('todoList'));
+                todoList = TodoService.getTodoList();
             } else {
                 todoList = [];
             }

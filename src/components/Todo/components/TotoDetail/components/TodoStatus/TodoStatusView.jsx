@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Emitter from 'helpers/emitter';
+import TodoService from 'services/TodoService';
 
 // remove this subscription afterwards when there is no use for it
 let subscription = null;
@@ -21,23 +22,13 @@ export default class TodoStatusView extends Component {
 
     changeStatus(todo) {
         let context = this;
-        let todoList = JSON.parse(localStorage.getItem('todoList'));
-        todoList.forEach(function (todoItem, index) {
-            if (todoItem.id === todo.id) {
-                if (todo.status) {
-                    todoList[index].status = false;
-                } else {
-                    todoList[index].status = true;
-                }
-            }
-        });
-        localStorage.setItem('todoList', JSON.stringify(todoList));
+        TodoService.updateStatus(todo);
         Emitter.emit('updateList', 'data');
     }
 
     render() {
         return (
-            <div>
+            <div className="pull-right">
                 {this.isCompleted(this.props.todo)} <a onClick={this.changeStatus(this.props.todo)} href="#"> change status</a>
             </div>
         );

@@ -18,9 +18,21 @@ export default class TodoDetailPresentation extends Component {
             <div className="col-md-9">
                 <div className="thumbnail">
                     <div className="caption-full">
-                        <h3><a href="#">{this.props.todo.name} </a></h3> <TodoStatusContainer todo={this.props.todo}/>
-                        <h5><span>added: {this.props.todo.date}</span></h5>
-                        <p>{this.props.todo.content}</p>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <h3><a href="#">{this.props.todo.name} </a></h3>
+                            </div>
+                            <div className="col-md-6">
+                                <TodoStatusContainer todo={this.props.todo} />
+                            </div>
+                        </div>
+                        <div className="row padding-left-9">
+                            <h5><span>added: {this.props.todo.date}</span></h5>
+                        </div>
+                        <div className="row padding-left-9">
+                            <p>{this.props.todo.content}</p>
+                        </div>
+
                     </div>
                 </div>
                 <CommentListContainer todo={this.props.todo} commentList={this.props.todo.comments} />

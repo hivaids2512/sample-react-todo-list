@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddTodoView from './AddTodoView';
 import Emitter from 'helpers/emitter';
+import TodoService from 'services/TodoService';
 
 let subscription = null;
 
@@ -12,9 +13,7 @@ export default class AddTodoContainer extends Component {
 
     componentWillMount() {
         subscription = Emitter.addListener('todoAdded', (data) => {
-            let todoList = JSON.parse(localStorage.getItem('todoList'));
-            todoList.push(data);
-            localStorage.setItem('todoList', JSON.stringify(todoList));
+            TodoService.addTodo(data);
             Emitter.emit('updateList', 'data');
         });
     }
