@@ -26,13 +26,18 @@ export default class CommentListContainer extends Component {
         this.setState({ commentList: commentList });
     }
 
+    componentWillReceiveProps(nextProps) {
+        let commentList = CommentService.getCommentList(nextProps.todo);
+        this.setState({ commentList: commentList });
+    }
+
     componentWillUnmount() {
         subscription.remove()
     }
 
     render() {
         return (
-            <CommentListView todo={ this.props.todo } commentList={this.state.commentList} />
+            <CommentListView todo={this.props.todo} commentList={this.state.commentList} />
         );
     }
 

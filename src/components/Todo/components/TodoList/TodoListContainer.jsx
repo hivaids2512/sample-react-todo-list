@@ -27,7 +27,6 @@ export default class TodoListContainer extends Component {
     }
 
     loadTodoList = (data) => {
-        console.log(data);
         let context = this;
         setTimeout(function () {
             todoList = TodoService.getTodoList();

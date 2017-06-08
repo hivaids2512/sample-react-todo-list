@@ -24,6 +24,7 @@ export default class TodoDetailContainer extends Component {
         subscription = Emitter.addListener('todoChanged', (data) => {
             currentTodo = data;
             this.setState(currentTodo);
+            Emitter.emit('updateCommentList','data');
         });
     }
 
