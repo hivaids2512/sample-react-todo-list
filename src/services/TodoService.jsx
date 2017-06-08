@@ -34,13 +34,14 @@ class TodoService extends Component {
         let todoList = JSON.parse(localStorage.getItem('todoList'));
         todoList.forEach(function (todoItem, index) {
             if (todoItem.id === todo.id) {
-                if (todo.status) {
-                    todoList[index].status = false;
+                if (todoItem.status === 'complete') {
+                    todoList[index].status = 'unComplete';
                 } else {
-                    todoList[index].status = true;
+                    todoList[index].status = 'complete';
                 }
             }
         });
+
         localStorage.setItem('todoList', JSON.stringify(todoList));
     }
 

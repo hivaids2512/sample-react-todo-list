@@ -23,7 +23,7 @@ export default class TodoListPresentation extends Component {
                 <div className="list-group">
                     {
                         this.props.todoList.map(function (todo, i) {
-                            return <a href="#" key={i} onClick={() => context.props.switchTodo({ todo })} className="list-group-item"> {i + 1}. {todo.name} </a>;
+                            return <a href="#" key={i} onClick={() => context.props.switchTodo( todo )} className="list-group-item"> {i + 1}. {todo.name} </a>;
                         })
                     }
                 </div>

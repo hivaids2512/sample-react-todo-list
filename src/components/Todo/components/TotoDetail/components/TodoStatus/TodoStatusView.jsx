@@ -14,7 +14,7 @@ export default class TodoStatusView extends Component {
     }
 
     isCompleted(todo) {
-        if (todo && todo.status) {
+        if (todo && todo.status === 'complete') {
             return <span className="label label-success">Archived</span>;
         }
         return <span className="label label-danger">Not Archive</span>
@@ -23,13 +23,13 @@ export default class TodoStatusView extends Component {
     changeStatus(todo) {
         let context = this;
         TodoService.updateStatus(todo);
-        Emitter.emit('updateList', 'data');
+        Emitter.emit('updateList', { mode: 'update', todo: todo });
     }
 
     render() {
         return (
             <div className="pull-right">
-                {this.isCompleted(this.props.todo)} <a onClick={this.changeStatus(this.props.todo)} href="#"> change status</a>
+                {this.isCompleted(this.props.todo)} <a onClick={() => this.changeStatus(this.props.todo)} href="#"> Change status</a>
             </div>
         );
     }

@@ -14,7 +14,7 @@ export default class AddTodoContainer extends Component {
 
     addTodo(newTodo) {
         TodoService.addTodo(newTodo);
-        Emitter.emit('updateList', 'data');
+        Emitter.emit('updateList', { mode: 'add' , data: undefined });
     }
 
     render() {

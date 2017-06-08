@@ -10,7 +10,7 @@ let currentTodo = {
     date: "no selected",
     comments: [
     ],
-    status: false
+    status: 'unComplete'
 };
 
 export default class TodoDetailContainer extends Component {
@@ -22,7 +22,7 @@ export default class TodoDetailContainer extends Component {
 
     componentWillMount() {
         subscription = Emitter.addListener('todoChanged', (data) => {
-            currentTodo = data.todo;
+            currentTodo = data;
             this.setState(currentTodo);
         });
     }

@@ -16,9 +16,9 @@ export default class TodoListContainer extends Component {
     }
 
     componentDidMount() {
-        this.loadTodoList();
+        this.loadTodoList({mode: 'add'});
         subscription = Emitter.addListener('updateList', (data) => {
-            this.loadTodoList();
+            this.loadTodoList(data);
         });
     }
 
@@ -26,11 +26,25 @@ export default class TodoListContainer extends Component {
         subscription.remove();
     }
 
-    loadTodoList = () => {
+    loadTodoList = (data) => {
+        console.log(data);
         let context = this;
         setTimeout(function () {
             todoList = TodoService.getTodoList();
             context.setState({ todoList: todoList });
+            if (data.mode === 'add') {
+                if (todoList && todoList.length > 0) {
+                    context.switchTodo(todoList[todoList.length - 1]);
+                }
+            } else {
+                todoList.forEach(function(element, index) {
+                    if(data.todo.id === element.id) {
+                        context.switchTodo(element);
+                    }
+                });
+                
+            }
+
         }, 500);
     }
 

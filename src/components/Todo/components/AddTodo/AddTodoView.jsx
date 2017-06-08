@@ -27,7 +27,7 @@ export default class AddTodoView extends Component {
         formData.date = new Date();
         formData.comments = [];
         formData.id = randomstring.generate(7);
-        formData.status = false;
+        formData.status = 'unComplete';
         this.props.addTodo(formData);
         this.closeModal();
     }
