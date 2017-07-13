@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 export default class TodoItemView extends Component {
 
-    constructor(){       
+    constructor(){     
+        super();  
     }
 
     render() {
