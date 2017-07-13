@@ -27,15 +27,12 @@ I have defined the project structure as follow:
       /index.jsx
       /style.css
     /Todo
-      /components
-        /AddTodo 
-        /TodoList
-        /TodoDetail
-          /components
-            /CommentList
-              /components
-                /AddComment
-                /CommentItem
+      /AddTodo 
+      /TodoList
+      /TodoDetail
+          /CommentList
+              /AddComment
+              /CommentItem
       /index.jsx
     /Navbar
       /index.jsx
