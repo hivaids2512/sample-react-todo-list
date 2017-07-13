@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TodoListContainer from './components/TodoList/TodoListContainer';
-import TodoDetailContainer from './components/TotoDetail/TodoDetailContainer';
+import TodoListContainer from './TodoList/TodoListContainer';
+import TodoDetailContainer from './TotoDetail/TodoDetailContainer';
 
 export default class Todo extends Component {
 

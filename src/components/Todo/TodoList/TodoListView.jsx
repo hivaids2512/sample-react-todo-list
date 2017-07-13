@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Emitter from 'helpers/emitter';
-import AddTodoContainer from 'components/Todo/components/AddTodo/AddTodoContainer';
+import AddTodoContainer from '../AddTodo/AddTodoContainer';
 
 export default class TodoListPresentation extends Component {
 

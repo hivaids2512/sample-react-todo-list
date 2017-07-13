@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Emitter from 'helpers/emitter';
-import CommentItemContainer from './components/CommentItem/CommentItemContainer';
-import AddCommentContainer from './components/AddComment/AddCommentContainer';
+import CommentItemContainer from './CommentItem/CommentItemContainer';
+import AddCommentContainer from './AddComment/AddCommentContainer';
 
 let subscription = null;
 
